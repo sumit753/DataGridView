@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace DatagridViewDemo
 {
@@ -11,7 +13,12 @@ namespace DatagridViewDemo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //binding xmlfile throught dataset
+            DataSet ds = new DataSet();
+            ds.ReadXml(Server.MapPath("~/Data/Countries.xml"));
 
+            GridView4.DataSource = ds;
+            GridView4.DataBind();
         }
     }
 }

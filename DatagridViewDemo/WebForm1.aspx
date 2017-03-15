@@ -2,9 +2,9 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
 <head runat="server">
-    <title></title>
+    <title>DataGridViewDemo</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -30,7 +30,35 @@
         </asp:GridView>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetAllStudents" TypeName="DatagridViewDemo.DataAccessLayer"></asp:ObjectDataSource>
     
+        <br />
+        <br />
+        Xml DataSourceDemo<asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Data/Countries1.xml"></asp:XmlDataSource>
+        <br />
+        Binding the Countries1.xml file to gridview control
+        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="XmlDataSource1">
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
+                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                <asp:BoundField DataField="Continent" HeaderText="Continent" SortExpression="Continent" />
+            </Columns>
+        </asp:GridView>
+        <br />
+        Binding the Countries.xml file to gridview control through xslt mapping<br />
+        <asp:XmlDataSource ID="XmlDataSource2" runat="server" DataFile="~/Data/Countries.xml" TransformFile="~/Data/CountriesXSLT.xslt"></asp:XmlDataSource>
+        <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" DataSourceID="XmlDataSource2">
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
+                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                <asp:BoundField DataField="Continent" HeaderText="Continent" SortExpression="Continent" />
+            </Columns>
+        </asp:GridView>
+        <br />
+    
     </div>
+        <p>
+            loading xml file through dataset<asp:GridView ID="GridView4" runat="server">
+            </asp:GridView>
+        </p>
     </form>
 </body>
 </html>
