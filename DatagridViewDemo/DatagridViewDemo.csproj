@@ -69,6 +69,7 @@
     <Content Include="Data\Countries.xml" />
     <Content Include="Data\Countries1.xml" />
     <Content Include="Data\CountriesXSLT.xslt" />
+    <Content Include="DeletingUsingSqlDataSource\WebForm1.aspx" />
     <Content Include="FormatingGridViewDemo\FormattingUsingRowDataBound\WebForm1.aspx" />
     <Content Include="FormatingGridViewDemo\WebForm1.aspx" />
     <Content Include="packages.config" />
@@ -88,6 +89,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccessLayer.cs" />
+    <Compile Include="DeletingUsingSqlDataSource\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeletingUsingSqlDataSource\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FormatingGridViewDemo\FormattingUsingRowDataBound\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
