@@ -11,7 +11,9 @@ namespace DatagridViewDemo.UsingObjectDataSource
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            //We need to give value to DataKeyName Property else Delete Button will not work
+            GridView1.DataKeyNames = new string[1] { "ID" };
+
         }
     }
 }
