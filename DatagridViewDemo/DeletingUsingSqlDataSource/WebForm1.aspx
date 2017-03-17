@@ -27,20 +27,7 @@
                 <asp:Parameter Name="original_LastName" Type="String" />
                 <asp:Parameter Name="original_Salary" Type="Int32" />
             </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="FirstName" Type="String" />
-                <asp:Parameter Name="LastName" Type="String" />
-                <asp:Parameter Name="Salary" Type="Int32" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="FirstName" Type="String" />
-                <asp:Parameter Name="LastName" Type="String" />
-                <asp:Parameter Name="Salary" Type="Int32" />
-                <asp:Parameter Name="original_ID" Type="Int32" />
-                <asp:Parameter Name="original_FirstName" Type="String" />
-                <asp:Parameter Name="original_LastName" Type="String" />
-                <asp:Parameter Name="original_Salary" Type="Int32" />
-            </UpdateParameters>
+          
         </asp:SqlDataSource>
     </div>
     </form>
