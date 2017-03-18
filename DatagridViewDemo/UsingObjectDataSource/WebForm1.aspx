@@ -19,7 +19,8 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource2">
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" />
-                <asp:BoundField DataField="ID" ItemStyle-CssClass="DisplayClass" HeaderStyle-CssClass="DisplayClass" HeaderText="ID" SortExpression="ID" />
+                <asp:BoundField DataField="ID" ItemStyle-CssClass="DisplayClass" HeaderStyle-CssClass="DisplayClass" HeaderText="ID" SortExpression="ID" >
+                </asp:BoundField>
                 <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
                 <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
                 
@@ -35,7 +36,7 @@
 
 
         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetAllEmployeeByDeparmentId" TypeName="DatagridViewDemo.UsingObjectDataSource.DataAccessLayer.EmployeeDataAccessLayer" 
-            DeleteMethod="deleteEmployeeRecord" OldValuesParameterFormatString="orignal_{0}" ConflictDetection="CompareAllValues" >
+            DeleteMethod="deleteEmployeeRecord" OldValuesParameterFormatString="orignal_{0}" ConflictDetection="CompareAllValues">
             <DeleteParameters>
                 <asp:Parameter Name="orignal_ID" Type="Int32" />
                 <asp:Parameter Name="orignal_FirstName" Type="String" />
@@ -47,6 +48,7 @@
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList1" Name="DeptId" PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>
+            
         </asp:ObjectDataSource>
     </form>
 </body>

@@ -76,8 +76,46 @@ namespace DatagridViewDemo.UsingObjectDataSource.DataAccessLayer
                 SqlParameter paramSalary = new SqlParameter("@Salary", orignal_Salary);
                 cmd.Parameters.Add(paramSalary);
 
-                SqlParameter paramDepartmentName = new SqlParameter("@DepartmentName", orignal_DepartmentName);
-                cmd.Parameters.Add(paramDepartmentName);
+                
+                SqlParameter paramGender = new SqlParameter("@Gender", orignal_Gender);
+                cmd.Parameters.Add(paramGender);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+
+            }
+        }
+
+        public static void updateEmployeeRecord(int orignal_ID, string orignal_FirstName, string orignal_LastName, string orignal_Salary, string orignal_Gender,string orignal_DepartmentName,string FirstName,string LastName,string Salary,string Gender)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                string queryString = "Update Employees set FirstName=@FirstName,LastName=LastName WHERE FirstName=@orignal_FirstName AND LastName=@orignal_LastName " +
+                                       " AND Salary=@orignal_Salary AND Gender=@orignal_Gender AND ID = @orignal_ID";
+                SqlCommand cmd = new SqlCommand(queryString, con);
+
+                SqlParameter paramID = new SqlParameter("@orignal_ID", orignal_ID);
+                cmd.Parameters.Add(paramID);
+
+
+                SqlParameter paramName = new SqlParameter("@orignal_FirstName", orignal_FirstName);
+                cmd.Parameters.Add(paramName);
+
+                SqlParameter paramLastName = new SqlParameter("@orignal_LastName", orignal_LastName);
+                cmd.Parameters.Add(paramLastName);
+
+                SqlParameter paramSalary = new SqlParameter("@orignal_Salary", orignal_Salary);
+                cmd.Parameters.Add(paramSalary);
+
+                SqlParameter newFirstName = new SqlParameter("@FirstName",FirstName );
+                cmd.Parameters.Add(newFirstName);
+
+                SqlParameter newLasttName = new SqlParameter("@LastName", LastName);
+                cmd.Parameters.Add(newLasttName);
+
 
                 SqlParameter paramGender = new SqlParameter("@Gender", orignal_Gender);
                 cmd.Parameters.Add(paramGender);
